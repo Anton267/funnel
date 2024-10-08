@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script data-type="F1TExternalSdkJs"
+  type="text/javascript"
+  src="https://fake-offers.xyz/cdn/sdk/v1/index.js"
+  crossorigin="anonymous" async defer>
+</script>
+
+  <style>
+    body {
+      background-color: skyblue;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 100px;
+      font-size: 60px;
+    }
+
+    .f1t-form {
+      max-width: 500px;
+      min-width: 300px;
+      margin: auto;
+    }
+
+    .modal {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255,255,255,0.8);
+    }
+  </style>
+</head>
+
+<body>
+    <h1>My Funnel</h1>
+
+   <div class="f1t-form f1t-form--loading">
+      // Set up your form here
+    </div>
+
+    <!-- <button> load</button> -->
+
+
+  <script>
+    window.F1TFunnelsSdkConfig = {
+      defaultQueryParams: "ld_id=12&tp_id=e9dd14de-2ddb-4179-bcf5-deb5d628cc37&hash={hash}&affiliate_source={affiliate_source}&aff_sub={aff_sub}&aff_sub2={aff_sub2}&aff_sub3={aff_sub3}&aff_sub4={aff_sub4}&aff_sub5={aff_sub5}&aff_click_id={aff_click_id}&aff_unique={aff_unique}&device_brand={device_brand}&device_model={device_model}&device_os={device_os}&device_os_version={device_os_version}&affiliate_id={affiliate_id}&offer_id={offer_id}&advertiser_id={advertiser_id}&offer_url_id={offer_url_id}",
+      formSteps: [
+        ["first_name", "last_name"],
+        ["phone", "email"],
+        ["gender", "date-of-birth", "temperature"],
+      ]
+    };
+  </script>
+
+
+<!-- <script>
+  const onload = () => {
+    const onclick = () => {
+      // your code for open modal. For example:
+      document.body.insertAdjacentHTML('afterbegin', '<div class="modal"><div class="f1t-form f1t-form--loading"></div></div>');
+      // and then init form:
+      window.sdkInit({
+       sdkFormUuid: "bf710561-c68d-4514-a1d0-23067ff8adc6"
+      });
+    }
+    document.querySelector("button").addEventListener("click", onclick);
+  };
+  window.addEventListener("load", onload);
+</script> -->
+
+<script>
+  const onload = () => {
+    window.sdkEvents$
+      .on("sdk:countryCode")
+      .subscribe((country) => {
+        console.log(country);
+        
+      });
+  };
+  window.addEventListener("load", onload);
+</script>
+
+</body>
+
+</html>
